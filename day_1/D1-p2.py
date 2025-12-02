@@ -1,4 +1,4 @@
-file = open('file.txt', 'r')
+file = open('input.txt', 'r')
 num = 50
 password = 0
 for line in file:
