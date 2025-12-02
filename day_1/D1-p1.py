@@ -3,9 +3,6 @@ num = 50
 password = 0
 for line in file:
     letter = line.strip()
-    previousNum = num
-    rotations = 0
-
     if(letter[0] == 'L'):
         num -= int(letter.split('L')[1])
     else:
