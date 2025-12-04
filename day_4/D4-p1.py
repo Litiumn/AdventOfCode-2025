@@ -1,4 +1,4 @@
-file = open('/home/adrian/Documents/Programming/Advent_of_Code/day_4/input.txt', 'r')
+file = open('input.txt', 'r')
 walls = []
 col = 0
 for line in file:
