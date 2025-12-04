@@ -1,6 +1,5 @@
 file = open('/home/adrian/Documents/Programming/Advent_of_Code/day_4/input.txt', 'r')
 walls = []
-remove = []
 col = 0
 for line in file:
     walls.append(list(line.strip()))

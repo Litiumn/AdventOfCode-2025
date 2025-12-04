@@ -1,11 +1,12 @@
 file = open('/home/adrian/Documents/Programming/Advent_of_Code/day_4/input.txt', 'r')
 walls = []
-remove = []
 col = 0
+checker = True
 for line in file:
     walls.append(list(line.strip()))
 
-while True:
+while checker:
+    checker = False
     for line in range(0, len(walls)):
         for column in range(0, len(walls[line])):
             string = []
@@ -23,18 +24,12 @@ while True:
                 if(column+1 == len(walls)):
                     end -= 1
                 string += walls[row][start:start+end]
-                
+
             while "." in string:
                 string.remove('.')
 
             if(len(string)-1 < 4):
                 col += 1
-                remove.append((line,column))
-    
-    if len(remove) == 0:
-        break
-    
-    for left, right in remove:
-        walls[left][right] = '.'
-    remove = []
+                walls[line][column] = "."
+                checker = True
 print(col)
