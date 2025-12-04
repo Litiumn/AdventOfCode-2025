@@ -1,3 +1,27 @@
+# Optimized using Monotonic Stack
+file = open('input.txt', 'r')
+banks = []
+sum = 0
+string = ""
+for line in file:
+    banks.append(list(line.strip()))
+    
+for bank in banks:
+    stack = []
+    for index in range(len(bank)):
+        while(stack and stack[-1] < bank[index] and len(stack) + (len(bank)-index) > 2):
+            stack.pop()
+        if(len(stack) < 2):
+            stack.append(bank[index])
+    sum += int(''.join(str(num) for num in stack))
+print(sum)
+
+
+
+'''
+
+# Old Code
+
 file = open('input.txt', 'r')
 banks = []
 sum = 0
@@ -20,3 +44,4 @@ for bank in banks:
         jolt += num
     sum += int(jolt)
 print(sum)
+'''
