@@ -1,4 +1,4 @@
-with open('input.txt', 'r') as file:
+with open('/home/adrian/Documents/Programming/Advent_of_Code/day_5/input.txt', 'r') as file:
     ranges = []
     ids = []
     count = 0
@@ -16,9 +16,9 @@ for lower, upper in ranges:
         adjustedRange.append([lower, upper])
         
     prevUp = adjustedRange[-1][1]
+    if upper < prevUp:
+        continue
     if lower <= prevUp:
-        if upper < prevUp:
-            continue
         adjustedRange[-1][1] = upper
     else:
         adjustedRange.append([lower, upper])
