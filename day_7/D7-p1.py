@@ -9,10 +9,7 @@ def traverse(arr, x, y, visited, sum = 0):
     visited.add((x, y))
 
     if arr[x][y] == '^':
-        sum += traverse(arr, x, y-1, visited)
-        sum += traverse(arr, x, y+1, visited)
-        sum += 1
-        return sum
+        return 1 + traverse(arr, x, y+1, visited) + traverse(arr, x, y-1, visited)
     if x == len(arr) - 1:
         return 0
     if arr[x][y] == '.':
