@@ -13,7 +13,7 @@ def traverse(arr, x, y, visited, sum = 0):
     if x == len(arr) - 1:
         return 0
     if arr[x][y] == '.':
-        sum += traverse(arr, x+1, y, visited)
+        sum = traverse(arr, x+1, y, visited)
     return sum
 
 visited = set()
