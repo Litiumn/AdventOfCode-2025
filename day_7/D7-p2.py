@@ -3,7 +3,7 @@ with open('/home/adrian/Documents/Programming/Advent_of_Code/day_7/test.txt', 'r
     for line in file:
         arr.append(line.strip())
 
-def traverse(arr, x, y, memo, sum = 0):
+def traverse(arr, x, y, memo):
     if (x,y) in memo:
         return memo[(x,y)]
     
